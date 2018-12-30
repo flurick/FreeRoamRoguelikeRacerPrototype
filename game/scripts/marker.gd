@@ -119,11 +119,11 @@ func spawn_finish(start):
 	
 	get_parent().add_child(finish)
 	
-	var minimap = player.get_node("Viewport_root/Viewport/minimap")
+	var minimap = player.find_node("minimap")
 	minimap.add_marker(finish.get_global_transform().origin, minimap.blue_flag)
 	
 	# test
-	var track_map = player.get_node("Viewport_root/Viewport/minimap/Container/Node2D2/Control_pos/track")
+	var track_map = minimap.find_node("track")
 	track_map.points = track_map.vec3s_convert(raceline)
 	# force redraw
 	track_map.update()

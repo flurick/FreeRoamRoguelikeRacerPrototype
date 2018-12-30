@@ -65,7 +65,7 @@ func _ready():
 	var h = preload("res://hud/hud.tscn")
 	hud = h.instance()
 	add_child(hud)
-	#var m = preload("res://hud/minimap.tscn")
+#	var m = preload("res://hud/minimap.tscn")
 	var m = preload("res://hud/Viewport.tscn")
 	map = m.instance()
 	map.set_name("Viewport_root")

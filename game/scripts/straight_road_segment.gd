@@ -46,9 +46,9 @@ var global_vertices
 var nav_vertices_alt
 var global_vertices_alt
 # margin
-#var margin = 1
-#var left_nav_positions = PoolVector3Array()
-#var right_nav_positions = PoolVector3Array()
+var margin = 1
+var left_nav_positions = PoolVector3Array()
+var right_nav_positions = PoolVector3Array()
 
 #for minimap
 var mid_point
@@ -290,9 +290,9 @@ func _ready():
 	if positions.size() > 0:
 		global_positions = get_global_positions()
 		
-		start_vector = Vector3(positions[1] - positions[0])
+		start_vector = positions[1] - positions[0]
 		#B-A = from a to b
-		end_vector = Vector3(positions[positions.size()-1]- positions[positions.size()-2])
+		end_vector = positions[positions.size()-1] - positions[positions.size()-2]
 		
 		start_ref = positions[0]+start_vector
 		end_ref = positions[positions.size()-1]+end_vector
@@ -649,27 +649,27 @@ func setupNavi(navigation_node):
 	nav_vertices_alt = get_navi_vertices_alt()
 	navMesh(navigation_node, nav_vertices_alt, false)
 
-#func get_navi_vertices():
-#	var nav_vertices = PoolVector3Array()
-#
-#	var pos_size = positions.size()-1
-#	nav_vertices.push_back(right_nav_positions[0])
-#	nav_vertices.push_back(positions[0])
-#	nav_vertices.push_back(positions[pos_size])
-#	nav_vertices.push_back(right_nav_positions[pos_size])
-#
-#	return nav_vertices
-#
-#func get_navi_vertices_alt():
-#	var nav_vertices = PoolVector3Array()
-#
-#	var pos_size = positions.size()-1
-#	nav_vertices.push_back(positions[0])
-#	nav_vertices.push_back(left_nav_positions[0])
-#	nav_vertices.push_back(left_nav_positions[pos_size])
-#	nav_vertices.push_back(positions[pos_size])
-#
-#	return nav_vertices
+func get_navi_vertices():
+	var nav_vertices = PoolVector3Array()
+
+	var pos_size = positions.size()-1
+	nav_vertices.push_back(right_nav_positions[0])
+	nav_vertices.push_back(positions[0])
+	nav_vertices.push_back(positions[pos_size])
+	nav_vertices.push_back(right_nav_positions[pos_size])
+
+	return nav_vertices
+
+func get_navi_vertices_alt():
+	var nav_vertices = PoolVector3Array()
+
+	var pos_size = positions.size()-1
+	nav_vertices.push_back(positions[0])
+	nav_vertices.push_back(left_nav_positions[0])
+	nav_vertices.push_back(left_nav_positions[pos_size])
+	nav_vertices.push_back(positions[pos_size])
+
+	return nav_vertices
 
 func navMesh(navigation_node, nav_vertices, left):
 	

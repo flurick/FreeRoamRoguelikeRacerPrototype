@@ -7,7 +7,7 @@ var mult
 
 var edges = []
 var samples = []
-var as
+var astar
 
 var nav
 #var tris = []
@@ -85,7 +85,7 @@ func _ready():
 	#print("tg : " + str(tg))
 
 #	print("Marker intersection id" + str(marker_data[0]) + " tg id" + str(marker_data[1]))
-	var int_path = as.get_id_path(marker_data[0], marker_data[1])
+	var int_path = astar.get_id_path(marker_data[0], marker_data[1])
 	print("Intersections path" + str(int_path))
 
 #	# test (get path_look entry at id x)
@@ -176,8 +176,12 @@ func setup_nav_astar(pts, i, begin_id):
 	
 	print(get_child(i).get_name() + " real numbers: " + str(ret))
 	
-	var turn1 = get_child(i).get_node("Road_instance0").get_child(0).get_child(0)
-	var turn2 = get_child(i).get_node("Road_instance1").get_child(0).get_child(0)
+	var turn1 = self
+	var turn2 = self
+	if find_node("Road_instance0"):
+		turn1 = get_child(i).get_node("Road_instance0").get_child(0).get_child(0)
+	if find_node("Road_instance1"):
+		turn2 = get_child(i).get_node("Road_instance1").get_child(0).get_child(0)
 
 	#print("Straight positions: " + str(get_child(i).get_node("Spatial0").get_child(0).positions))
 	#print("Turn 1 positions: " + str(turn1.positions))
@@ -243,13 +247,13 @@ func setup_nav_astar(pts, i, begin_id):
 
 func setup_neighbors():
 	# we'll use AStar to have an easy map of neighbors
-	as = AStar.new()
+	astar = AStar.new()
 	for i in range(0,samples.size()-1):
-		as.add_point(i, Vector3(samples[i][0]*mult, 0, samples[i][1]*mult))
+		astar.add_point(i, Vector3(samples[i][0]*mult, 0, samples[i][1]*mult))
 
 	for i in range(0, edges.size()):
 		var ed = edges[i]
-		as.connect_points(ed[0], ed[1])
+		astar.connect_points(ed[0], ed[1])
 
 # yes it could be more efficient I guess
 func bfs_distances(start):
@@ -267,7 +271,7 @@ func bfs_distances(start):
 		var node = queue.pop_front()
 		#print("Visiting... " + str(node))
 
-		var neighbours = as.get_point_connections(node)
+		var neighbours = astar.get_point_connections(node)
 		# add neighbours of node to queue
 		for neighbour in neighbours:
 			# if not visited

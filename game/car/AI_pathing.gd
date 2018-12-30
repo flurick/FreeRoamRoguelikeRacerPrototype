@@ -1,4 +1,4 @@
-extends Node
+extends Spatial
 
 # class member variables go here, for example:
 export(Vector3) var target = Vector3(0,0,0)
@@ -36,7 +36,7 @@ func find_path():
 #			get_tree().call_group("right_lane", "set_enabled", true)
 		
 		# get the points on navmesh relative to ourselves and target
-		var pos = get_translation()
+		var pos = translation
 		var source = navigation_node.get_closest_point(pos)
 		print(get_name() + " looking for closest point to own position : " + String(pos) + " is " + String(source))
 		var t = navigation_node.get_closest_point(target)
