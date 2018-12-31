@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://objects/car/engine.gd" type="Script" id=1]
 [ext_resource path="res://objects/car/car filled.obj" type="ArrayMesh" id=2]
@@ -10,6 +10,19 @@
 [sub_resource type="BoxShape" id=1]
 
 extents = Vector3( 0.462985, 0.376136, 1.36725 )
+
+[sub_resource type="SpatialMaterial" id=3]
+
+emission_enabled = true
+emission = Color( 1, 0.447059, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="QuadMesh" id=4]
+
+material = SubResource( 3 )
+size = Vector2( 0.01, 0.1 )
 
 [sub_resource type="CylinderMesh" id=2]
 
@@ -60,6 +73,14 @@ material/1 = null
 material/2 = null
 material/3 = null
 material/4 = null
+
+[node name="dial" type="Spatial" parent="KinematicBody/fillled/panel"]
+transform = Transform( -1, 1.32629e-008, -1.47439e-007, -1.88644e-008, 0.976441, 0.215783, 1.46827e-007, 0.215783, -0.976441, 0.254802, 0.374731, 0.328271 )
+
+[node name="MeshInstance" type="MeshInstance" parent="KinematicBody/fillled/panel/dial"]
+transform = Transform( 1, 0, 2.84217e-014, 0, 1, 0, 0, 0, 1, 0, 0.0622707, -0.00231546 )
+mesh = SubResource( 4 )
+material/0 = null
 
 [node name="shell" type="Spatial" parent="KinematicBody"]
 editor/display_folded = true
