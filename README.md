@@ -2,6 +2,8 @@ Goal 1: boring racing game
 
 This project will not focus on procedural content.
 
+![Screenshot of lanterns](lanterns.png)
+
 | Key | Action |
 | --- | --- |
 | Arrows | drive |
