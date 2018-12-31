@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/straight_road_segment.gd" type="Script" id=1]
+[ext_resource path="res://scripts/draw_line.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+
+[node name="Position3D" type="Position3D" groups=[
+"roads",
+]]
+script = ExtResource( 1 )
+length = 50
+relative_end = Vector3( 0, 0, 100 )
+
+[node name="draw" type="ImmediateGeometry" parent="."]
+material_override = SubResource( 1 )
+cast_shadow = 0
+script = ExtResource( 2 )
+

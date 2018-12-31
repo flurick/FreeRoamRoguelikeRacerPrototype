@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/driver_sit.dae" type="PackedScene" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+roughness = 0.0
+
+[sub_resource type="SpatialMaterial" id=2]
+
+roughness = 0.0
+
+[sub_resource type="SpatialMaterial" id=3]
+
+albedo_color = Color( 0.00390625, 0.00390625, 0.00390625, 1 )
+roughness = 0.0
+
+[node name="Scene Root" instance=ExtResource( 1 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+
+[node name="driverbody" parent="Armature/Skeleton" index="0"]
+material/0 = SubResource( 1 )
+
+[node name="driverhelmet" parent="Armature/Skeleton" index="1"]
+material/0 = SubResource( 2 )
+
+[node name="drivervisor" parent="Armature/Skeleton" index="2"]
+material/0 = SubResource( 3 )
+

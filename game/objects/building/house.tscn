@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="PrismMesh" id=2]
+
+
+[sub_resource type="CubeMesh" id=3]
+
+
+[node name="house" type="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2.79223, 0, 0, 0 )
+
+[node name="CSGMesh" type="CSGMesh" parent="."]
+transform = Transform( 1.21985, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 3, 0.089602 )
+mesh = SubResource( 2 )
+
+[node name="CSGMesh2" type="CSGMesh" parent="."]
+transform = Transform( 1.21985, 0, 0, 0, 1, 0, 0, 0, 1.1493, 0, 2.48711, 0.089602 )
+operation = 2
+mesh = SubResource( 2 )
+
+[node name="CSGMesh3" type="CSGMesh" parent="."]
+transform = Transform( 1.21985, 0, 0, 0, 0.73074, 0, 0, 0, 0.796618, 0, 2.73355, 0.0896019 )
+mesh = SubResource( 2 )
+
+[node name="CSGMesh4" type="CSGMesh" parent="."]
+transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.796618, 0, 0.999505, 0.0853283 )
+mesh = SubResource( 3 )
+
+[node name="CSGMesh5" type="CSGMesh" parent="."]
+transform = Transform( 1.46611, 0, 0, 0, 0.506737, 1.91761, 0, -0.30875, 0.403676, 0, 3.50112, -0.869931 )
+operation = 2
+mesh = SubResource( 3 )
+

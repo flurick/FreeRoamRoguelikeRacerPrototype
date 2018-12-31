@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/chinasign_1.obj-fc40fb8efdde6a5a4087d8f5f193a681.mesh"
+
+[deps]
+
+files=[ "res://.import/chinasign_1.obj-fc40fb8efdde6a5a4087d8f5f193a681.mesh" ]
+
+source_file="res://objects/decoration/chinasign_1.obj"
+dest_files=[ "res://.import/chinasign_1.obj-fc40fb8efdde6a5a4087d8f5f193a681.mesh", "res://.import/chinasign_1.obj-fc40fb8efdde6a5a4087d8f5f193a681.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

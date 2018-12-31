@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/garage.obj-225fc0603c98b59bfa14ceafde4836e6.mesh"
+
+[deps]
+
+files=[ "res://.import/garage.obj-225fc0603c98b59bfa14ceafde4836e6.mesh" ]
+
+source_file="res://objects/building/garage/garage.obj"
+dest_files=[ "res://.import/garage.obj-225fc0603c98b59bfa14ceafde4836e6.mesh", "res://.import/garage.obj-225fc0603c98b59bfa14ceafde4836e6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

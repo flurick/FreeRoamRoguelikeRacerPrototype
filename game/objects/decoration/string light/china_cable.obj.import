@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/china_cable.obj-762bc72002c3d5120a3eca12007be7ac.mesh"
+
+[deps]
+
+files=[ "res://.import/china_cable.obj-762bc72002c3d5120a3eca12007be7ac.mesh" ]
+
+source_file="res://objects/decoration/string light/china_cable.obj"
+dest_files=[ "res://.import/china_cable.obj-762bc72002c3d5120a3eca12007be7ac.mesh", "res://.import/china_cable.obj-762bc72002c3d5120a3eca12007be7ac.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
