@@ -155,7 +155,7 @@ func process_car_physics(delta, gas, braking, left, right):
 		#var steer_change = STEER_SPEED*delta
 		
 		# TORCS style
-		var press = 2 * 1 - 1
+		var press = 1
 		var steer_change = press * STEER_SENS * delta  / (1.0 + SPEED_SENS * get_linear_velocity().length() / SPEED_FACT) * FUDGE
 		
 		steer_angle += steer_change

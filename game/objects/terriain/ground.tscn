@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/terriain/ground_material.tres" type="Material" id=1]
+
+[sub_resource type="PlaneShape" id=1]
+
+
+[sub_resource type="PlaneMesh" id=2]
+
+size = Vector2( 200, 200 )
+
+[node name="ground" type="StaticBody"]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )
+

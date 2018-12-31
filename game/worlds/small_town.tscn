@@ -1,17 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://worlds/small_town.gd" type="Script" id=1]
-[ext_resource path="res://assets/ground_material.tres" type="Material" id=2]
-[ext_resource path="res://objects/building/house.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objects/decoration/neon_tube.tscn" type="PackedScene" id=4]
-[ext_resource path="res://objects/decoration/string light/string lights.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/NeonChinaSign1.png" type="Texture" id=6]
-[ext_resource path="res://objects/building/house-L.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/road-I.tscn" type="PackedScene" id=8]
-[ext_resource path="res://objects/car/car.tscn" type="PackedScene" id=9]
-
-[sub_resource type="PlaneMesh" id=1]
-
+[ext_resource path="res://objects/building/house.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/decoration/neon_tube.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/decoration/string light/string lights.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/NeonChinaSign1.png" type="Texture" id=5]
+[ext_resource path="res://objects/building/house-L.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/road-I.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/car/car.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/terriain/ground.tscn" type="PackedScene" id=9]
 
 [node name="world" type="Spatial"]
 script = ExtResource( 1 )
@@ -36,34 +33,29 @@ shadow_color = Color( 0.490196, 0.372549, 0.152941, 1 )
 shadow_bias = 0.35
 shadow_contact = 16.0
 
-[node name="ground" type="MeshInstance" parent="."]
-transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, -0.0780077, -0.0596733, 0.778075 )
-mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
-
-[node name="house3" parent="." instance=ExtResource( 3 )]
+[node name="house3" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2734, -0.133224, -0.732026 )
 
-[node name="house4" parent="." instance=ExtResource( 3 )]
+[node name="house4" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.932672, 0, 0.360726, 0, 1, 0, -0.360726, 0, 0.932672, -19.7447, -0.133224, 3.58443 )
 
-[node name="house5" parent="." instance=ExtResource( 3 )]
+[node name="house5" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.809465, 0, -0.587169, 0, 1, 0, 0.587169, 0, 0.809465, 8.64002, 1.62429, 21.3706 )
 
-[node name="house6" parent="." instance=ExtResource( 3 )]
+[node name="house6" parent="." instance=ExtResource( 2 )]
 editor/display_folded = true
 transform = Transform( 0.809465, 0, -1.53923, 0, 1, 0, 0.587169, 0, 2.12197, 13.4103, -0.133226, 9.39023 )
 
-[node name="Spatial" parent="house6" instance=ExtResource( 4 )]
+[node name="Spatial" parent="house6" instance=ExtResource( 3 )]
 transform = Transform( 0.809465, 0, 0.587168, 0, 1, 0, -0.223986, 0, 0.308785, -0.9922, 0.0735527, -0.71065 )
 
-[node name="Spatial2" parent="house6" instance=ExtResource( 4 )]
+[node name="Spatial2" parent="house6" instance=ExtResource( 3 )]
 transform = Transform( 0.809465, 0, 0.587168, 0, 1, 0, -0.223986, 0, 0.308785, -1.04852, 0.0735522, 0.890552 )
 
-[node name="Spatial3" parent="house6" instance=ExtResource( 4 )]
+[node name="Spatial3" parent="house6" instance=ExtResource( 3 )]
 transform = Transform( 0.809578, 0, 0.176814, 0, 3.07, 0, -0.224018, 0, 0.638988, -12.804, 0.281981, -1.15335 )
 
-[node name="lanterns" parent="house6" instance=ExtResource( 5 )]
+[node name="lanterns" parent="house6" instance=ExtResource( 4 )]
 transform = Transform( 0.16669, 0.151596, 0.974285, 0.194883, 0.96355, -0.183269, -0.368711, 0.0840837, 0.0499992, -7.37356, -1.50755, -1.25909 )
 
 [node name="sign" type="Spatial" parent="house6"]
@@ -72,32 +64,37 @@ transform = Transform( 0.979548, 0, -0.201206, 0, 1, 0, 0.0767535, 0, 0.373667, 
 
 [node name="Sprite3D" type="Sprite3D" parent="house6/sign"]
 transform = Transform( 0.06, 0, 0, 0, 0.06, 0, 0, 0, 1, 0, 1.32886, 0 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
-[node name="house-L" parent="." instance=ExtResource( 7 )]
+[node name="house-L" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13274, 0, -5.90779 )
 
-[node name="house-L2" parent="." instance=ExtResource( 7 )]
+[node name="house-L2" parent="." instance=ExtResource( 6 )]
 transform = Transform( -0.443375, 0, 0.896336, 0, 1, 0, -0.896336, 0, -0.443375, -33.2313, 0, -5.90779 )
 
-[node name="Road" parent="." instance=ExtResource( 8 )]
+[node name="Road" parent="." instance=ExtResource( 7 )]
 editor/display_folded = true
 
-[node name="Road2" parent="Road" instance=ExtResource( 8 )]
+[node name="Road2" parent="Road" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 2.91038e-011, -2.91038e-011, 1, 30.5845, -7.62939e-006, -2.79397e-009 )
 
-[node name="Road3" parent="Road" instance=ExtResource( 8 )]
+[node name="Road3" parent="Road" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 2.91038e-011, -2.91038e-011, 1, -30.2609, -2.76566e-005, 5.21541e-008 )
 
-[node name="Road4" parent="Road" instance=ExtResource( 8 )]
+[node name="Road4" parent="Road" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 2.91038e-011, -2.91038e-011, 1, -60.0305, -5.72205e-006, -4.09782e-008 )
 
-[node name="Road5" parent="Road" instance=ExtResource( 8 )]
+[node name="Road5" parent="Road" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 2.91038e-011, -2.91038e-011, 1, 60.5559, 5.14984e-005, -6.98492e-008 )
 
-[node name="Camera" type="Camera" parent="."]
+[node name="Overview camera" type="Camera" parent="." groups=[
+"camera",
+]]
 transform = Transform( 1, 0, 0, 0, 0.842754, 0.538299, 0, -0.538299, 0.842754, 0, 9.08588, 28.6782 )
 
-[node name="car" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.30102, 0.161988, 2.44305 )
+[node name="car" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.30102, 0.452388, 2.44305 )
+
+[node name="ground" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0807648, 0 )
 
