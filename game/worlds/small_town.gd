@@ -1,8 +1,8 @@
 extends Spatial
 
-func _update(delta):
-	if Input.is_key_pressed( KEY_RIGHT):
-		position.x += 1
+#func _update(delta):
+#	if Input.is_key_pressed( KEY_RIGHT):
+#		position.x += 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

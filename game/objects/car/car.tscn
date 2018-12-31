@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/car/car.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="CylinderMesh" id=1]
+
+radial_segments = 16
+rings = 1
+
+[node name="car" type="Spatial"]
+
+[node name="car" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="car2" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="wheel fl" type="CSGMesh" parent="."]
+transform = Transform( -5.90659e-009, 0.106049, 0, -0.209609, -7.19064e-009, 0, 0, 0, 0.209609, 0.583753, 0.0377404, 0.814608 )
+mesh = SubResource( 1 )
+
+[node name="wheel fr" type="CSGMesh" parent="."]
+transform = Transform( -5.90659e-009, 0.106049, 0, -0.209609, -7.19064e-009, 0, 0, 0, 0.209609, -0.577042, 0.0377404, 0.814608 )
+mesh = SubResource( 1 )
+
+[node name="wheel bl" type="CSGMesh" parent="."]
+transform = Transform( -5.90659e-009, 0.106049, 0, -0.209609, -7.19064e-009, 0, 0, 0, 0.209609, 0.583753, 0.0377404, -0.644497 )
+mesh = SubResource( 1 )
+
+[node name="wheel br" type="CSGMesh" parent="."]
+transform = Transform( -5.90659e-009, 0.106049, 0, -0.209609, -7.19064e-009, 0, 0, 0, 0.209609, -0.577042, 0.0377404, -0.644497 )
+mesh = SubResource( 1 )
+

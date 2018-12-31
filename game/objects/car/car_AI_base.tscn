@@ -1,8 +1,9 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://car/vehicle_AI.gd" type="Script" id=1]
-[ext_resource path="res://car/follow_camera.gd" type="Script" id=2]
+[ext_resource path="res://objects/car/vehicle_AI.gd" type="Script" id=1]
+[ext_resource path="res://objects/car/follow_camera.gd" type="Script" id=2]
 [ext_resource path="res://hud/test_car_label.tscn" type="PackedScene" id=3]
+
 
 [sub_resource type="PhysicsMaterial" id=1]
 
