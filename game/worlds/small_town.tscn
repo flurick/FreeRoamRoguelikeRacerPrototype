@@ -90,7 +90,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 2.91038e-011, -2.91038e-011, 1, 60.5559
 [node name="Overview camera" type="Camera" parent="." groups=[
 "camera",
 ]]
-transform = Transform( 1, 0, 0, 0, 0.842754, 0.538299, 0, -0.538299, 0.842754, 0, 9.08588, 28.6782 )
+transform = Transform( 1, 0, 0, 0, 0.842754, 0.538299, 0, -0.538299, 0.842754, 0, 9.08588, 46.8473 )
 
 [node name="car" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.30102, 0.452388, 2.44305 )

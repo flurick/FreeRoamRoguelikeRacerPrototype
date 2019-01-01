@@ -6,9 +6,9 @@ var acceleration_input = 0
 var acceleration_multi = 2
 var steer = 0
 var turning_radius = 3
-var engine_power = 10
+var engine_power = 5
 var forward = Vector3.FORWARD	
-var friction = 0.1
+var friction = 0.6
 
 		
 func _process(delta):
@@ -27,11 +27,12 @@ func _process(delta):
 	
 	forward = transform.basis.z.normalized()
 	acceleration_input = (Input.get_action_strength("accelerate")-Input.get_action_strength("reverse")) * engine_power
-	if acceleration_input and !$AudioStreamPlayer3D.playing:  $AudioStreamPlayer3D.play()
+	if acceleration_input and !$AudioStreamPlayer3D.playing:  
+		$AudioStreamPlayer3D.play()
 	velocity += forward * acceleration_input * acceleration_multi
 	
-	if velocity.length() != 0:
-		velocity -= Vector3.ONE * friction
+	if velocity.length() >= 0:
+		velocity *= friction
 	velocity = move_and_slide( velocity, Vector3.UP)
 	
 	find_node("dial").rotation.z = deg2rad(velocity.z*0.1)
