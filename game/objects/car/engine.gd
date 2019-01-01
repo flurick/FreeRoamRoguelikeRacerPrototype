@@ -27,6 +27,7 @@ func _process(delta):
 	
 	forward = transform.basis.z.normalized()
 	acceleration_input = (Input.get_action_strength("accelerate")-Input.get_action_strength("reverse")) * engine_power
+	if acceleration_input and !$AudioStreamPlayer3D.playing:  $AudioStreamPlayer3D.play()
 	velocity += forward * acceleration_input * acceleration_multi
 	
 	if velocity.length() != 0:

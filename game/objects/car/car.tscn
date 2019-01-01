@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://objects/car/engine.gd" type="Script" id=1]
 [ext_resource path="res://objects/car/car filled.obj" type="ArrayMesh" id=2]
@@ -6,12 +6,13 @@
 [ext_resource path="res://objects/car/panel.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://objects/car/steering wheel.obj" type="ArrayMesh" id=5]
 [ext_resource path="res://objects/car/car.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://objects/car/electric acceleration.wav" type="AudioStream" id=7]
 
 [sub_resource type="BoxShape" id=1]
 
 extents = Vector3( 0.462985, 0.376136, 1.36725 )
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=2]
 
 emission_enabled = true
 emission = Color( 1, 0.447059, 0, 1 )
@@ -19,12 +20,12 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="QuadMesh" id=4]
+[sub_resource type="QuadMesh" id=3]
 
-material = SubResource( 3 )
+material = SubResource( 2 )
 size = Vector2( 0.01, 0.1 )
 
-[sub_resource type="CylinderMesh" id=2]
+[sub_resource type="CylinderMesh" id=4]
 
 radial_segments = 16
 rings = 1
@@ -39,6 +40,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.243349, 0.407258 )
 shape = SubResource( 1 )
 
 [node name="fillled" type="Spatial" parent="KinematicBody"]
+editor/display_folded = true
 
 [node name="car filled" type="MeshInstance" parent="KinematicBody/fillled"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.300608 )
@@ -79,7 +81,7 @@ transform = Transform( -1, 1.32629e-008, -1.47439e-007, -1.88644e-008, 0.976441,
 
 [node name="MeshInstance" type="MeshInstance" parent="KinematicBody/fillled/panel/dial"]
 transform = Transform( 1, 0, 2.84217e-014, 0, 1, 0, 0, 0, 1, 0, 0.0622707, -0.00231546 )
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 material/0 = null
 
 [node name="shell" type="Spatial" parent="KinematicBody"]
@@ -98,19 +100,19 @@ material/0 = null
 
 [node name="wheel fl" type="CSGMesh" parent="KinematicBody"]
 transform = Transform( -5.90659e-009, 0.106049, 0, -0.209609, -7.19064e-009, 0, 0, 0, 0.209609, 0.583753, 0.0377404, 1.11522 )
-mesh = SubResource( 2 )
+mesh = SubResource( 4 )
 
 [node name="wheel fr" type="CSGMesh" parent="KinematicBody"]
 transform = Transform( -5.90659e-009, 0.106049, 0, -0.209609, -7.19064e-009, 0, 0, 0, 0.209609, -0.577042, 0.0377404, 1.11522 )
-mesh = SubResource( 2 )
+mesh = SubResource( 4 )
 
 [node name="wheel bl" type="CSGMesh" parent="KinematicBody"]
 transform = Transform( -5.90659e-009, 0.106049, 0, -0.209609, -7.19064e-009, 0, 0, 0, 0.209609, 0.583753, 0.0377404, -0.343889 )
-mesh = SubResource( 2 )
+mesh = SubResource( 4 )
 
 [node name="wheel br" type="CSGMesh" parent="KinematicBody"]
 transform = Transform( -5.90659e-009, 0.106049, 0, -0.209609, -7.19064e-009, 0, 0, 0, 0.209609, -0.577042, 0.0377404, -0.343889 )
-mesh = SubResource( 2 )
+mesh = SubResource( 4 )
 
 [node name="Driver POV" type="Camera" parent="KinematicBody" groups=[
 "camera",
@@ -136,4 +138,8 @@ transform = Transform( 1, 1.42109e-014, 1.74846e-007, -1.43653e-007, 0.570068, 0
 fov = 117.8
 near = 0.01
 far = 1000.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.809043 )
+stream = ExtResource( 7 )
 
