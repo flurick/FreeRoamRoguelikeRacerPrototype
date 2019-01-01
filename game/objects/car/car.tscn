@@ -133,11 +133,35 @@ far = 1000.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="power" type="ProgressBar" parent="KinematicBody/Driver POV/ViewportContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="KinematicBody/Driver POV/ViewportContainer"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -14.0
+
+[node name="Control" type="Control" parent="KinematicBody/Driver POV/ViewportContainer/HBoxContainer"]
+margin_right = 510.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="power2" type="ProgressBar" parent="KinematicBody/Driver POV/ViewportContainer/HBoxContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 514.0
+margin_right = 514.0
+rect_scale = Vector2( -1, 1 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/fg = SubResource( 5 )
+percent_visible = false
+
+[node name="power" type="ProgressBar" parent="KinematicBody/Driver POV/ViewportContainer/HBoxContainer"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/fg = SubResource( 5 )
 
 [node name="Driver POV backwards" type="Camera" parent="KinematicBody" groups=[

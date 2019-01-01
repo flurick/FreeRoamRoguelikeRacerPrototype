@@ -12,7 +12,7 @@ var turning_radius = 3
 var engine_power = 3
 var forward = Vector3.FORWARD	
 
-var friction = 0.9
+var friction = 0.8
 
 		
 func _process(delta):
@@ -33,7 +33,8 @@ func _process(delta):
 	velocity += forward * acceleration_input * acceleration_multi
 	
 	steer = Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right")
-	if acceleration_input:
+	velocity = velocity.rotated( Vector3.UP, deg2rad(steer*turning_radius) )
+	if velocity:
 		rotate_y(deg2rad(steer*turning_radius))
 	
 	if velocity.length() >= 0:
@@ -43,6 +44,7 @@ func _process(delta):
 	#ui
 	find_node("dial").rotation.z = deg2rad(velocity.z*0.1)
 	find_node("power").value = velocity.length()
+	find_node("power2").value = velocity.length()
 	
 	
 	
