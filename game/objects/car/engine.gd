@@ -22,14 +22,15 @@ func _process(delta):
 	if Input.is_action_just_released("look back"):
 		find_node("Driver POV").current = true
 	
-	steer = Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right")
-	rotate_y(deg2rad(steer*turning_radius))
-	
 	forward = transform.basis.z.normalized()
 	acceleration_input = (Input.get_action_strength("accelerate")-Input.get_action_strength("reverse")) * engine_power
 	if acceleration_input and !$AudioStreamPlayer3D.playing:  
 		$AudioStreamPlayer3D.play()
 	velocity += forward * acceleration_input * acceleration_multi
+	
+	steer = Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right")
+	if acceleration_input:
+		rotate_y(deg2rad(steer*turning_radius))
 	
 	if velocity.length() >= 0:
 		velocity *= friction
