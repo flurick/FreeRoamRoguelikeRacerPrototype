@@ -2,13 +2,17 @@ extends KinematicBody
 
 var gravity = Vector3.DOWN * 10
 var velocity = Vector3.ZERO
+
 var acceleration_input = 0
 var acceleration_multi = 2
+
 var steer = 0
 var turning_radius = 3
-var engine_power = 5
+
+var engine_power = 3
 var forward = Vector3.FORWARD	
-var friction = 0.6
+
+var friction = 0.9
 
 		
 func _process(delta):
@@ -36,7 +40,9 @@ func _process(delta):
 		velocity *= friction
 	velocity = move_and_slide( velocity, Vector3.UP)
 	
+	#ui
 	find_node("dial").rotation.z = deg2rad(velocity.z*0.1)
+	find_node("power").value = velocity.length()
 	
 	
 	

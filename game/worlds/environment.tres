@@ -1,0 +1,15 @@
+[gd_resource type="Environment" load_steps=3 format=2]
+
+[ext_resource path="res://objects/sky/cloudy/yellowcloud_lf.jpg" type="Texture" id=1]
+
+[sub_resource type="PanoramaSky" id=1]
+
+radiance_size = 3
+panorama = ExtResource( 1 )
+
+[resource]
+
+background_mode = 2
+background_sky = SubResource( 1 )
+background_sky_orientation = Basis( -0.382, 0, -0.924, 0.1, 1, 0, 0.924, 0, -0.382 )
+

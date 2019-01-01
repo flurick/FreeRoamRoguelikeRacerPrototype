@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://worlds/small_town.gd" type="Script" id=1]
 [ext_resource path="res://objects/building/house.tscn" type="PackedScene" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://assets/NeonChinaSign1.png" type="Texture" id=5]
 [ext_resource path="res://objects/building/house-L.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/road-I.tscn" type="PackedScene" id=7]
-[ext_resource path="res://objects/car/car.tscn" type="PackedScene" id=8]
-[ext_resource path="res://objects/terriain/ground.tscn" type="PackedScene" id=9]
+[ext_resource path="res://worlds/environment.tres" type="Environment" id=8]
+[ext_resource path="res://objects/car/car.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/terriain/ground.tscn" type="PackedScene" id=10]
 
 [node name="world" type="Spatial"]
 script = ExtResource( 1 )
@@ -90,11 +91,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 2.91038e-011, -2.91038e-011, 1, 60.5559
 [node name="Overview camera" type="Camera" parent="." groups=[
 "camera",
 ]]
-transform = Transform( 1, 0, 0, 0, 0.842754, 0.538299, 0, -0.538299, 0.842754, 0, 9.08588, 46.8473 )
+transform = Transform( 1, 0, 0, 0, 0.998996, 0.0448036, 0, -0.0448036, 0.998996, 0, 9.08588, 46.8473 )
+environment = ExtResource( 8 )
 
-[node name="car" parent="." instance=ExtResource( 8 )]
+[node name="car" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.30102, 0.452388, 2.44305 )
 
-[node name="ground" parent="." instance=ExtResource( 9 )]
+[node name="ground" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0807648, 0 )
 
