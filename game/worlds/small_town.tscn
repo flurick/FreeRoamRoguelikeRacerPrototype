@@ -152,7 +152,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 2.91038e-011, -2.91038e-011, 1, -30.260
 transform = Transform( 1, 0, 0, 0, 1, 0, 2.91038e-011, -2.91038e-011, 1, -60.0305, -5.72205e-006, -4.09782e-008 )
 
 [node name="Road5" parent="Road" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 2.91038e-011, -2.91038e-011, 1, 60.5559, 5.14984e-005, -6.98492e-008 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 8.73115e-011, -8.73115e-011, 1, 60.5559, 5.72205e-005, -7.03149e-008 )
 
 [node name="Overview camera" type="Camera" parent="." groups=[
 "camera",
@@ -161,7 +161,7 @@ transform = Transform( 1, 0, 0, 0, 0.998996, 0.0448036, 0, -0.0448036, 0.998996,
 environment = ExtResource( 15 )
 
 [node name="car" parent="." instance=ExtResource( 16 )]
-transform = Transform( -0.031404, 0, 0.999507, 0, 1, 0, -0.999507, 0, -0.031404, 7.3237, 0.507613, 2.54825 )
+transform = Transform( -0.329851, 0, 0.944033, 0, 1, 0, -0.944033, 0, -0.329851, 7.3237, 0.507613, 2.54825 )
 
 [node name="ground" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0807648, 0 )

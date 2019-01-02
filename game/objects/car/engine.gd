@@ -10,7 +10,7 @@ var steer = 0
 var turning_radius = 3
 
 var engine_power = 3
-var forward = Vector3.FORWARD	
+var forward = Vector3.FORWARD
 
 var friction = 0.8
 
@@ -26,7 +26,7 @@ func _process(delta):
 	if Input.is_action_just_released("look back"):
 		find_node("Driver POV").current = true
 	
-	forward = transform.basis.z.normalized()
+	forward = global_transform.basis.z.normalized()
 	acceleration_input = (Input.get_action_strength("accelerate")-Input.get_action_strength("reverse")) * engine_power
 	if acceleration_input and !$AudioStreamPlayer3D.playing:  
 		$AudioStreamPlayer3D.play()
