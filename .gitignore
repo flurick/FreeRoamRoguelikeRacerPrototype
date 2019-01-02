@@ -1,3 +1,5 @@
 resources/
 game/.import/
 *.import
+*.png~
+*.import

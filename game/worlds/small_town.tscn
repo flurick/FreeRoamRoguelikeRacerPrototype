@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://worlds/small_town.gd" type="Script" id=1]
 [ext_resource path="res://assets/simple_skybox/Skybox.tscn" type="PackedScene" id=2]
@@ -17,6 +17,58 @@
 [ext_resource path="res://worlds/environment.tres" type="Environment" id=15]
 [ext_resource path="res://objects/car/car.tscn" type="PackedScene" id=16]
 [ext_resource path="res://objects/terriain/ground.tscn" type="PackedScene" id=17]
+[ext_resource path="res://objects/decoration/smoke/smoke.png" type="Texture" id=18]
+
+[sub_resource type="Shader" id=7]
+
+code = "shader_type spatial;
+render_mode cull_disabled;
+uniform vec4 albedo : hint_color;
+uniform sampler2D texture_albedo : hint_albedo;
+
+
+void fragment() {
+	vec2 base_uv = UV;
+	vec4 albedo_tex = texture(texture_albedo,base_uv);
+	ALBEDO = albedo.rgb;
+	ALPHA = albedo_tex.a;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=8]
+
+shader = SubResource( 7 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/texture_albedo = ExtResource( 18 )
+
+[sub_resource type="Gradient" id=3]
+
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=4]
+
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+
+_data = [ Vector2( 0, 0 ), 0.0, 0.220615, 0, 0, Vector2( 0.550379, 0.2118 ), 1.43483, 1.43483, 0, 0, Vector2( 0.997222, 1 ), 1.76393, 0.0, 1, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=1]
+
+gravity = Vector3( 0, 3, 0 )
+initial_velocity = 0.5
+initial_velocity_random = 1.0
+damping = 1.0
+scale = 3.0
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 4 )
+
+[sub_resource type="QuadMesh" id=2]
+
 
 [node name="world" type="Spatial"]
 script = ExtResource( 1 )
@@ -109,8 +161,17 @@ transform = Transform( 1, 0, 0, 0, 0.998996, 0.0448036, 0, -0.0448036, 0.998996,
 environment = ExtResource( 15 )
 
 [node name="car" parent="." instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.30102, 0.452388, 2.44305 )
+transform = Transform( -0.031404, 0, 0.999507, 0, 1, 0, -0.999507, 0, -0.031404, 7.3237, 0.507613, 2.54825 )
 
 [node name="ground" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0807648, 0 )
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 0.305599, 0, -0.95216, 0, 1, 0, 0.95216, 0, 0.305599, 16.9125, 0.553754, 0.730739 )
+material_override = SubResource( 8 )
+cast_shadow = 0
+amount = 32
+lifetime = 3.0
+process_material = SubResource( 1 )
+draw_pass_1 = SubResource( 2 )
 
