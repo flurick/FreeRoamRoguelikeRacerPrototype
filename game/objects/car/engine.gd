@@ -7,13 +7,17 @@ var acceleration_input = 0
 var acceleration_multi = 2
 
 var steer = 0
-var turning_radius = 3
+var turning_angle = 3
 
 var engine_power = 3
 var forward = Vector3.FORWARD
 
 var friction = 0.8
 
+func normal(val):
+	if val>0: return 1
+	elif val<0: return -1
+	else: return 0
 		
 func _process(delta):
 	
@@ -27,17 +31,19 @@ func _process(delta):
 		find_node("Driver POV").current = true
 	
 	forward = global_transform.basis.z.normalized()
-	acceleration_input = (Input.get_action_strength("accelerate")-Input.get_action_strength("reverse")) * engine_power
+	acceleration_input = (Input.get_action_strength("accelerate")-Input.get_action_strength("reverse"))
 	if acceleration_input and !$AudioStreamPlayer3D.playing:  
 		$AudioStreamPlayer3D.play()
-	velocity += forward * acceleration_input * acceleration_multi
+	velocity += forward * acceleration_input * engine_power * acceleration_multi 
 	
 	steer = Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right")
-	velocity = velocity.rotated( Vector3.UP, deg2rad(steer*turning_radius) )
-	if velocity:
-		rotate_y(deg2rad(steer*turning_radius))
+	find_node("steering wheel").rotation = Vector3(0,0,-steer)
 	
-	if velocity.length() >= 0:
+	velocity = velocity.rotated( Vector3.UP, deg2rad(steer*turning_angle) )
+	if velocity.length() > 1:
+		rotate_y( deg2rad(steer*turning_angle*acceleration_input) )
+	
+	if velocity.length() > 0:
 		velocity *= friction
 	velocity = move_and_slide( velocity, Vector3.UP)
 	

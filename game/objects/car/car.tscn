@@ -47,7 +47,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.243349, 0.407258 )
 shape = SubResource( 1 )
 
 [node name="fillled" type="Spatial" parent="KinematicBody"]
-editor/display_folded = true
 
 [node name="car filled" type="MeshInstance" parent="KinematicBody/fillled"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.300608 )
@@ -75,7 +74,7 @@ mesh = ExtResource( 4 )
 material/0 = null
 
 [node name="steering wheel" type="MeshInstance" parent="KinematicBody/fillled/panel"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0902101 )
+transform = Transform( 1, 0, 0, 0, 0.958799, -0.284086, 0, 0.284086, 0.958799, 0.183916, 0.397935, 0.24985 )
 mesh = ExtResource( 5 )
 material/0 = null
 material/1 = null
@@ -124,7 +123,7 @@ mesh = SubResource( 4 )
 [node name="Driver POV" type="Camera" parent="KinematicBody" groups=[
 "camera",
 ]]
-transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0.2, 0.605, 0.375 )
+transform = Transform( -1, 2.30538e-008, -8.43283e-008, 0, 0.964603, 0.263705, 8.74228e-008, 0.263705, -0.964603, 0.2, 0.605, 0.375 )
 environment = ExtResource( 7 )
 current = true
 fov = 80.0
