@@ -47,6 +47,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.243349, 0.407258 )
 shape = SubResource( 1 )
 
 [node name="fillled" type="Spatial" parent="KinematicBody"]
+editor/display_folded = true
 
 [node name="car filled" type="MeshInstance" parent="KinematicBody/fillled"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.300608 )
