@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://worlds/small_town.gd" type="Script" id=1]
 [ext_resource path="res://assets/simple_skybox/Skybox.tscn" type="PackedScene" id=2]
@@ -14,61 +14,11 @@
 [ext_resource path="res://assets/NeonChinaSign1.png" type="Texture" id=12]
 [ext_resource path="res://objects/building/house-L.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/road-I.tscn" type="PackedScene" id=14]
-[ext_resource path="res://worlds/environment.tres" type="Environment" id=15]
-[ext_resource path="res://objects/car/car.tscn" type="PackedScene" id=16]
-[ext_resource path="res://objects/terriain/ground.tscn" type="PackedScene" id=17]
-[ext_resource path="res://objects/decoration/smoke/smoke.png" type="Texture" id=18]
-
-[sub_resource type="Shader" id=7]
-
-code = "shader_type spatial;
-render_mode cull_disabled;
-uniform vec4 albedo : hint_color;
-uniform sampler2D texture_albedo : hint_albedo;
-
-
-void fragment() {
-	vec2 base_uv = UV;
-	vec4 albedo_tex = texture(texture_albedo,base_uv);
-	ALBEDO = albedo.rgb;
-	ALPHA = albedo_tex.a;
-}
-"
-
-[sub_resource type="ShaderMaterial" id=8]
-
-shader = SubResource( 7 )
-shader_param/albedo = Color( 1, 1, 1, 1 )
-shader_param/texture_albedo = ExtResource( 18 )
-
-[sub_resource type="Gradient" id=3]
-
-colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=4]
-
-gradient = SubResource( 3 )
-
-[sub_resource type="Curve" id=5]
-
-_data = [ Vector2( 0, 0 ), 0.0, 0.220615, 0, 0, Vector2( 0.550379, 0.2118 ), 1.43483, 1.43483, 0, 0, Vector2( 0.997222, 1 ), 1.76393, 0.0, 1, 0 ]
-
-[sub_resource type="CurveTexture" id=6]
-
-curve = SubResource( 5 )
-
-[sub_resource type="ParticlesMaterial" id=1]
-
-gravity = Vector3( 0, 3, 0 )
-initial_velocity = 0.5
-initial_velocity_random = 1.0
-damping = 1.0
-scale = 3.0
-scale_curve = SubResource( 6 )
-color_ramp = SubResource( 4 )
-
-[sub_resource type="QuadMesh" id=2]
-
+[ext_resource path="res://objects/terriain/dirt/texture.png" type="Texture" id=15]
+[ext_resource path="res://worlds/environment.tres" type="Environment" id=16]
+[ext_resource path="res://objects/car/car.tscn" type="PackedScene" id=17]
+[ext_resource path="res://objects/terriain/ground.tscn" type="PackedScene" id=18]
+[ext_resource path="res://objects/checkpoint/Checkpoint.tscn" type="PackedScene" id=19]
 
 [node name="world" type="Spatial"]
 script = ExtResource( 1 )
@@ -92,7 +42,7 @@ shadow_bias = 0.35
 shadow_contact = 16.0
 
 [node name="moon" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 7, 0 )
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.453802, 6.75375, 0.245079 )
 light_color = Color( 0.592157, 0.568627, 0.870588, 1 )
 light_energy = 0.1
 light_indirect_energy = 0.1
@@ -108,7 +58,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2734, -0.133224, -0.732026
 transform = Transform( 0.932672, 0, 0.360726, 0, 1, 0, -0.360726, 0, 0.932672, -19.7447, -0.133224, 3.58443 )
 
 [node name="house5" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.809465, 0, -0.587169, 0, 1, 0, 0.587169, 0, 0.809465, 8.64002, 1.62429, 21.3706 )
+transform = Transform( 0.809465, 0, -0.587169, 0, 1, 0, 0.587169, 0, 0.809465, 8.64002, -0.606145, 21.3706 )
 
 [node name="house6" parent="." instance=ExtResource( 9 )]
 editor/display_folded = true
@@ -141,6 +91,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13274, 0, -5.90779 )
 transform = Transform( -0.443375, 0, 0.896336, 0, 1, 0, -0.896336, 0, -0.443375, -33.2313, 0, -5.90779 )
 
 [node name="Road" parent="." instance=ExtResource( 14 )]
+editor/display_folded = true
 
 [node name="Road2" parent="Road" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 2.91038e-011, -2.91038e-011, 1, 30.5845, -7.62939e-006, -2.79397e-009 )
@@ -154,24 +105,47 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 2.91038e-011, -2.91038e-011, 1, -60.030
 [node name="Road5" parent="Road" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 8.73115e-011, -8.73115e-011, 1, 60.5559, 5.72205e-005, -7.03149e-008 )
 
+[node name="track" type="Spatial" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="track"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 6.956, 0, -20.149 )
+modulate = Color( 0.184314, 0.133333, 0.0862745, 1 )
+texture = ExtResource( 15 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="track"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 13.868, 0, -14.605 )
+modulate = Color( 0.184314, 0.133333, 0.0862745, 1 )
+texture = ExtResource( 15 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="track"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 11.093, 0, -17.03 )
+modulate = Color( 0.184314, 0.133333, 0.0862745, 1 )
+texture = ExtResource( 15 )
+
 [node name="Overview camera" type="Camera" parent="." groups=[
 "camera",
 ]]
 transform = Transform( 1, 0, 0, 0, 0.998996, 0.0448036, 0, -0.0448036, 0.998996, 0, 9.08588, 46.8473 )
-environment = ExtResource( 15 )
+environment = ExtResource( 16 )
 
-[node name="car" parent="." instance=ExtResource( 16 )]
+[node name="car" parent="." instance=ExtResource( 17 )]
 transform = Transform( -0.329851, 0, 0.944033, 0, 1, 0, -0.944033, 0, -0.329851, 7.3237, 0.507613, 2.54825 )
 
-[node name="ground" parent="." instance=ExtResource( 17 )]
+[node name="ground" parent="." instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0807648, 0 )
 
-[node name="Particles" type="Particles" parent="."]
-transform = Transform( 0.305599, 0, -0.95216, 0, 1, 0, 0.95216, 0, 0.305599, 16.9125, 0.553754, 0.730739 )
-material_override = SubResource( 8 )
-cast_shadow = 0
-amount = 32
-lifetime = 3.0
-process_material = SubResource( 1 )
-draw_pass_1 = SubResource( 2 )
+[node name="Checkpoint" parent="." instance=ExtResource( 19 )]
+transform = Transform( 0.305599, 0, -0.95216, 0, 1, 0, 0.95216, 0, 0.305599, -2.65712, 0.553754, -22.5065 )
+
+[node name="Checkpoint5" parent="." instance=ExtResource( 19 )]
+transform = Transform( 0.305599, 0, -0.95216, 0, 1, 0, 0.95216, 0, 0.305599, -26.2717, 0.55375, -1.10466 )
+
+[node name="Checkpoint2" parent="." instance=ExtResource( 19 )]
+transform = Transform( 0.305599, 0, -0.95216, 0, 1, 0, 0.95216, 0, 0.305599, -8.5758, 0.553754, 32.4201 )
+
+[node name="Checkpoint3" parent="." instance=ExtResource( 19 )]
+transform = Transform( 0.305599, 0, -0.95216, 0, 1, 0, 0.95216, 0, 0.305599, 26.0002, 0.553754, 36.061 )
+
+[node name="Checkpoint4" parent="." instance=ExtResource( 19 )]
+transform = Transform( 0.305599, 0, -0.95216, 0, 1, 0, 0.95216, 0, 0.305599, 35.1033, 0.553758, 10.5581 )
 

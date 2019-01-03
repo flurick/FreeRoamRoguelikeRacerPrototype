@@ -40,6 +40,8 @@ bg_color = Color( 0.219608, 0.776471, 0.172549, 1 )
 [node name="KinematicBody" type="KinematicBody" parent="."]
 script = ExtResource( 1 )
 
+[node name="OmniLight" type="OmniLight" parent="KinematicBody"]
+
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.243349, 0.407258 )
 shape = SubResource( 1 )
@@ -122,10 +124,10 @@ mesh = SubResource( 4 )
 [node name="Driver POV" type="Camera" parent="KinematicBody" groups=[
 "camera",
 ]]
-transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0.27243, 0.605983, 0.277486 )
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0.2, 0.605, 0.375 )
 environment = ExtResource( 7 )
 current = true
-fov = 90.0
+fov = 80.0
 near = 0.01
 far = 1000.0
 
@@ -183,4 +185,9 @@ far = 1000.0
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.809043 )
 stream = ExtResource( 8 )
+
+[node name="SpotLight" type="SpotLight" parent="KinematicBody"]
+transform = Transform( -0.997401, -0.00513435, 0.071864, -6.23007e-009, 0.997458, 0.0712636, -0.0720472, 0.0710784, -0.994865, -0.254534, 0.188749, 2 )
+spot_range = 9.89229
+spot_angle = 18.2743
 
