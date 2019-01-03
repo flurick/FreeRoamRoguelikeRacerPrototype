@@ -2,6 +2,7 @@ extends KinematicBody
 
 var gravity = Vector3.DOWN * 10
 var velocity = Vector3.ZERO
+var driver_face = Vector3.ZERO
 
 var acceleration_input = 0
 var acceleration_multi = 2
@@ -14,11 +15,11 @@ var forward = Vector3.FORWARD
 
 var friction = 0.8
 
-func normal(val):
-	if val>0: return 1
-	elif val<0: return -1
-	else: return 0
-		
+
+func _ready():
+	driver_face = find_node("Driver POV").rotation
+
+
 func _process(delta):
 	
 	if Input.is_action_just_pressed("reset"):
@@ -38,6 +39,10 @@ func _process(delta):
 	
 	steer = Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right")
 	find_node("steering wheel").rotation = Vector3(0,0,-steer)
+	if steer == 0:
+		find_node("Driver POV").rotation.y = lerp(find_node("Driver POV").rotation.y, driver_face.y+steer*0.5, 0.1)
+	else:
+		find_node("Driver POV").rotation.y = lerp(find_node("Driver POV").rotation.y, driver_face.y+steer*0.5, 0.01)
 	
 	velocity = velocity.rotated( Vector3.UP, deg2rad(steer*turning_angle) )
 	if velocity.length() > 1:
