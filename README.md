@@ -6,9 +6,7 @@ This project will not focus on procedural content.
 
 | Key | Action |
 | --- | --- |
-| Arrows | drive |
-| R | reset |
+| Arrows / WASD / Joystick | drive |
+| Ctrl + R | reset |
 | C | next camera |
-| A / D | peek |
 | E | look back |
-| T | debug camera |
