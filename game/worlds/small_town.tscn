@@ -9,10 +9,10 @@
 [ext_resource path="res://objects/sky/cloudy/yellowcloud_lf.jpg" type="Texture" id=7]
 [ext_resource path="res://objects/sky/cloudy/yellowcloud_rt.jpg" type="Texture" id=8]
 [ext_resource path="res://objects/building/house.tscn" type="PackedScene" id=9]
-[ext_resource path="res://objects/decoration/neon_tube.tscn" type="PackedScene" id=10]
-[ext_resource path="res://objects/decoration/string light/string lights.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/NeonChinaSign1.png" type="Texture" id=12]
-[ext_resource path="res://objects/building/house-L.tscn" type="PackedScene" id=13]
+[ext_resource path="res://objects/building/house-L.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/decoration/neon_tube.tscn" type="PackedScene" id=11]
+[ext_resource path="res://objects/decoration/string light/string lights.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/NeonChinaSign1.png" type="Texture" id=13]
 [ext_resource path="res://assets/road-I.tscn" type="PackedScene" id=14]
 [ext_resource path="res://objects/terriain/dirt/texture.png" type="Texture" id=15]
 [ext_resource path="res://worlds/environment.tres" type="Environment" id=16]
@@ -51,44 +51,248 @@ shadow_color = Color( 0.490196, 0.372549, 0.152941, 1 )
 shadow_bias = 0.35
 shadow_contact = 16.0
 
-[node name="house3" parent="." instance=ExtResource( 9 )]
+[node name="block2" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.632166, 0, -0.0398073 )
+
+[node name="house3" parent="block2" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2734, -0.133224, -0.732026 )
 
-[node name="house4" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.932672, 0, 0.360726, 0, 1, 0, -0.360726, 0, 0.932672, -19.7447, -0.133224, 3.58443 )
+[node name="house4" parent="block2" instance=ExtResource( 9 )]
+transform = Transform( 0.932672, 0, 0.360726, 0, 1, 0, -0.360726, 0, 0.932672, -19.6952, -0.133224, 0.678524 )
 
-[node name="house5" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.809465, 0, -0.587169, 0, 1, 0, 0.587169, 0, 0.809465, 8.64002, -0.606145, 21.3706 )
+[node name="house5" parent="block2" instance=ExtResource( 9 )]
+transform = Transform( 0.932672, 0, 0.360726, 0, 1, 0, -0.360726, 0, 0.932672, -18.4772, -0.133224, -4.30598 )
 
-[node name="house6" parent="." instance=ExtResource( 9 )]
+[node name="house6" parent="block2" instance=ExtResource( 9 )]
+transform = Transform( 0.932672, 0, 0.360726, 0, 1, 0, -0.360726, 0, 0.932672, -17.7636, -0.133224, -9.24676 )
+
+[node name="house7" parent="block2" instance=ExtResource( 9 )]
+transform = Transform( 0.932672, 0, 0.360726, 0.0329416, 0.995822, -0.0851719, -0.359219, 0.0913203, 0.928775, -5.77618, -0.133224, 0.657368 )
+
+[node name="house8" parent="block2" instance=ExtResource( 9 )]
+transform = Transform( 0.932672, 0, 0.360726, 0.0329416, 0.995822, -0.0851719, -0.359219, 0.0913203, 0.928775, -14.5244, -0.133224, 5.16397 )
+
+[node name="house9" parent="block2" instance=ExtResource( 9 )]
+transform = Transform( 0.932672, 0, 0.360726, 0.0329416, 0.995822, -0.0851719, -0.359219, 0.0913203, 0.928775, -8.07298, -0.133224, 5.79945 )
+
+[node name="house10" parent="block2" instance=ExtResource( 9 )]
+transform = Transform( 0.932672, 0, 0.360726, 0.0329416, 0.995822, -0.0851719, -0.359219, 0.0913203, 0.928775, -1.09018, -0.133224, 1.96094 )
+
+[node name="house11" parent="block2" instance=ExtResource( 9 )]
+transform = Transform( 0.932672, 0, 0.360726, 0.0329416, 0.995822, -0.0851719, -0.359219, 0.0913203, 0.928775, -12.2037, -0.133224, -15.7537 )
+
+[node name="house12" parent="block2" instance=ExtResource( 9 )]
+transform = Transform( 0.932672, 0, 0.360726, 0.0329416, 0.995822, -0.0851719, -0.359219, 0.0913203, 0.928775, -16.0107, -0.133224, -13.7999 )
+
+[node name="house13" parent="block2" instance=ExtResource( 9 )]
+transform = Transform( 0.932672, 0, 0.360726, 0.0329416, 0.995822, -0.0851719, -0.359219, 0.0913203, 0.928775, -6.54937, -0.133224, -16.2502 )
+
+[node name="house14" parent="block2" instance=ExtResource( 9 )]
+transform = Transform( 0.932672, 0, 0.360726, 0.0329416, 0.995822, -0.0851719, -0.359219, 0.0913203, 0.928775, -1.83226, -0.133224, -14.1205 )
+
+[node name="house15" parent="block2" instance=ExtResource( 9 )]
+transform = Transform( 0.932672, 0, 0.360726, 0.0329416, 0.995822, -0.0851719, -0.359219, 0.0913203, 0.928775, -10.0755, -0.133224, -11.2654 )
+
+[node name="house16" parent="block2" instance=ExtResource( 9 )]
+transform = Transform( 0.932672, 0, 0.360726, 0.0329416, 0.995822, -0.0851719, -0.359219, 0.0913203, 0.928775, -8.08717, -0.133224, -5.71796 )
+
+[node name="house17" parent="block2" instance=ExtResource( 9 )]
+transform = Transform( 0.932672, 0, 0.360726, 0.0329416, 0.995822, -0.0851719, -0.359219, 0.0913203, 0.928775, -13.575, -0.133224, -6.75137 )
+
+[node name="house-L" parent="block2" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13274, 0, -5.90779 )
+
+[node name="house-L2" parent="block2" instance=ExtResource( 10 )]
+transform = Transform( -0.443375, 0, 0.896336, 0, 1, 0, -0.896336, 0, -0.443375, -32.5349, 0, -3.9102 )
+
+[node name="Block" type="Spatial" parent="."]
 editor/display_folded = true
-transform = Transform( 0.809465, 0, -1.53923, 0, 1, 0, 0.587169, 0, 2.12197, 13.4103, -0.133226, 9.39023 )
+transform = Transform( 0.383119, 0, 0.923699, 0, 1, 0, -0.923699, 0, 0.383119, -33.9698, -0.133224, -11.1817 )
 
-[node name="Spatial" parent="house6" instance=ExtResource( 10 )]
+[node name="house5" parent="Block" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="house6" parent="Block" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.46318, 0, -0.0707245 )
+
+[node name="house7" parent="Block" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.3187, 0, -0.151327 )
+
+[node name="house8" parent="Block" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6795, 0, -0.0835209 )
+
+[node name="house9" parent="Block" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4153, 0, -0.00826263 )
+
+[node name="house10" parent="Block" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2705, 0, 0.0823345 )
+
+[node name="house11" parent="Block" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2973, 0, 0.265198 )
+
+[node name="house12" parent="Block" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1272, 0, 0.959261 )
+
+[node name="Block2" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 0.834207, 0, -0.551452, 0, 1, 0, 0.551452, 0, 0.834207, -15.0184, -0.133224, -43.0476 )
+
+[node name="house5" parent="Block2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="house6" parent="Block2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.46318, 0, -0.0707245 )
+
+[node name="house7" parent="Block2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.3187, 0, -0.151327 )
+
+[node name="house8" parent="Block2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6795, 0, -0.0835209 )
+
+[node name="house9" parent="Block2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4153, 0, -0.00826263 )
+
+[node name="house10" parent="Block2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2705, 0, 0.0823345 )
+
+[node name="house11" parent="Block2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2973, 0, 0.265198 )
+
+[node name="house12" parent="Block2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1272, 0, 0.959261 )
+
+[node name="Block3" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 0.999972, 0, 0.00755747, 0, 1, 0, -0.00755747, 0, 0.999972, -7.68397, -0.133224, 43.1117 )
+
+[node name="house5" parent="Block3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="house6" parent="Block3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.46318, 0, -0.0707245 )
+
+[node name="house7" parent="Block3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.3187, 0, -0.151327 )
+
+[node name="house8" parent="Block3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6795, 0, -0.0835209 )
+
+[node name="house9" parent="Block3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4153, 0, -0.00826263 )
+
+[node name="house10" parent="Block3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2705, 0, 0.0823345 )
+
+[node name="house11" parent="Block3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2973, 0, 0.265198 )
+
+[node name="house12" parent="Block3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1272, 0, 0.959261 )
+
+[node name="block" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1695, 0, 22.7274 )
+
+[node name="house5" parent="block" instance=ExtResource( 9 )]
+transform = Transform( 0.809465, 0, -0.587169, 0, 1, 0, 0.587169, 0, 0.809465, -14.2038, -0.606145, 1.45753 )
+
+[node name="house7" parent="block" instance=ExtResource( 9 )]
+transform = Transform( 0.971204, 0, -0.23825, 0, 1, 0, 0.23825, 0, 0.971204, -10.3341, -0.606145, 3.73117 )
+
+[node name="house8" parent="block" instance=ExtResource( 9 )]
+transform = Transform( 0.971204, 0, -0.23825, 0, 1, 0, 0.23825, 0, 0.971204, -5.56546, -0.606145, 4.67067 )
+
+[node name="house9" parent="block" instance=ExtResource( 9 )]
+transform = Transform( 0.676468, 0, -0.736473, 0, 1, 0, 0.736473, 0, 0.676468, -18.1025, -0.606145, -2.27242 )
+
+[node name="house6" parent="block" instance=ExtResource( 9 )]
+editor/display_folded = true
+transform = Transform( 0.84047, 0, -1.42045, 0, 1, 0, 0.541859, 0, 2.20325, -6.99306, -0.133226, -12.8442 )
+
+[node name="Spatial" parent="block/house6" instance=ExtResource( 11 )]
 transform = Transform( 0.809465, 0, 0.587168, 0, 1, 0, -0.223986, 0, 0.308785, -0.9922, 0.0735527, -0.71065 )
 
-[node name="Spatial2" parent="house6" instance=ExtResource( 10 )]
+[node name="Spatial2" parent="block/house6" instance=ExtResource( 11 )]
 transform = Transform( 0.809465, 0, 0.587168, 0, 1, 0, -0.223986, 0, 0.308785, -1.04852, 0.0735522, 0.890552 )
 
-[node name="Spatial3" parent="house6" instance=ExtResource( 10 )]
+[node name="Spatial3" parent="block/house6" instance=ExtResource( 11 )]
 transform = Transform( 0.809578, 0, 0.176814, 0, 3.07, 0, -0.224018, 0, 0.638988, -12.804, 0.281981, -1.15335 )
 
-[node name="lanterns" parent="house6" instance=ExtResource( 11 )]
+[node name="lanterns" parent="block/house6" instance=ExtResource( 12 )]
 transform = Transform( 0.16669, 0.151596, 0.974285, 0.194883, 0.96355, -0.183269, -0.368711, 0.0840837, 0.0499992, -7.37356, -1.50755, -1.25909 )
 
-[node name="sign" type="Spatial" parent="house6"]
+[node name="sign" type="Spatial" parent="block/house6"]
 editor/display_folded = true
 transform = Transform( 0.979548, 0, -0.201206, 0, 1, 0, 0.0767535, 0, 0.373667, -1.37219, 0.0735527, -0.72753 )
 
-[node name="Sprite3D" type="Sprite3D" parent="house6/sign"]
+[node name="Sprite3D" type="Sprite3D" parent="block/house6/sign"]
 transform = Transform( 0.06, 0, 0, 0, 0.06, 0, 0, 0, 1, 0, 1.32886, 0 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 
-[node name="house-L" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13274, 0, -5.90779 )
+[node name="block5" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 0.4832, 0, -0.87551, 0, 1, 0, 0.87551, 0, 0.4832, 27.5715, 1.90735e-006, 29.799 )
 
-[node name="house-L2" parent="." instance=ExtResource( 13 )]
-transform = Transform( -0.443375, 0, 0.896336, 0, 1, 0, -0.896336, 0, -0.443375, -33.2313, 0, -5.90779 )
+[node name="house5" parent="block5" instance=ExtResource( 9 )]
+transform = Transform( 0.809465, 0, -0.587169, 0, 1, 0, 0.587169, 0, 0.809465, -14.2038, -0.606145, 1.45753 )
+
+[node name="house7" parent="block5" instance=ExtResource( 9 )]
+transform = Transform( 0.971204, 0, -0.23825, 0, 1, 0, 0.23825, 0, 0.971204, -10.3341, -0.606145, 3.73117 )
+
+[node name="house8" parent="block5" instance=ExtResource( 9 )]
+transform = Transform( 0.971204, 0, -0.23825, 0, 1, 0, 0.23825, 0, 0.971204, -5.56546, -0.606145, 4.67067 )
+
+[node name="house9" parent="block5" instance=ExtResource( 9 )]
+transform = Transform( 0.676468, 0, -0.736473, 0, 1, 0, 0.736473, 0, 0.676468, -18.1025, -0.606145, -2.27242 )
+
+[node name="block6" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 0.665288, 0, 0.746587, 0, 1, 0, -0.746587, 0, 0.665288, 18.1496, 1.90735e-006, 4.06815 )
+
+[node name="house5" parent="block6" instance=ExtResource( 9 )]
+transform = Transform( 0.809465, 0, -0.587169, 0, 1, 0, 0.587169, 0, 0.809465, -14.2038, -0.606145, 1.45753 )
+
+[node name="house7" parent="block6" instance=ExtResource( 9 )]
+transform = Transform( 0.971204, 0, -0.23825, 0, 1, 0, 0.23825, 0, 0.971204, -10.3341, -0.606145, 3.73117 )
+
+[node name="house8" parent="block6" instance=ExtResource( 9 )]
+transform = Transform( 0.971204, 0, -0.23825, 0, 1, 0, 0.23825, 0, 0.971204, -5.56546, -0.606145, 4.67067 )
+
+[node name="house9" parent="block6" instance=ExtResource( 9 )]
+transform = Transform( 0.676468, 0, -0.736473, 0, 1, 0, 0.736473, 0, 0.676468, -18.1025, -0.606145, -2.27242 )
+
+[node name="block3" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5293, 0, 21.1259 )
+
+[node name="house7" parent="block3" instance=ExtResource( 9 )]
+transform = Transform( 0.668623, 0, -0.743603, 0, 1, 0, 0.743603, 0, 0.668623, 5.52486, -0.606145, -5.4129 )
+
+[node name="house8" parent="block3" instance=ExtResource( 9 )]
+transform = Transform( -0.65175, 0, -0.758435, 0, 1, 0, 0.758435, 0, -0.65175, 5.55301, -0.606145, 6.42668 )
+
+[node name="house9" parent="block3" instance=ExtResource( 9 )]
+transform = Transform( -0.264371, 0, -0.964422, 0, 1, 0, 0.964422, 0, -0.264371, 8.03383, -0.606145, 2.34602 )
+
+[node name="house10" parent="block3" instance=ExtResource( 9 )]
+transform = Transform( 0.324759, 0, -0.945797, 0, 1, 0, 0.945797, 0, 0.324759, 7.75499, -0.606145, -1.64005 )
+
+[node name="block4" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 0.613359, 0, -0.789804, 0, 1, 0, 0.789804, 0, 0.613359, 34.6791, 0, 35.0938 )
+
+[node name="house7" parent="block4" instance=ExtResource( 9 )]
+transform = Transform( 0.668623, 0, -0.743603, 0, 1, 0, 0.743603, 0, 0.668623, 5.52486, -0.606145, -5.4129 )
+
+[node name="house8" parent="block4" instance=ExtResource( 9 )]
+transform = Transform( -0.65175, 0, -0.758435, 0, 1, 0, 0.758435, 0, -0.65175, 5.55301, -0.606145, 6.42668 )
+
+[node name="house9" parent="block4" instance=ExtResource( 9 )]
+transform = Transform( -0.264371, 0, -0.964422, 0, 1, 0, 0.964422, 0, -0.264371, 8.03383, -0.606145, 2.34602 )
+
+[node name="house10" parent="block4" instance=ExtResource( 9 )]
+transform = Transform( 0.324759, 0, -0.945797, 0, 1, 0, 0.945797, 0, 0.324759, 7.75499, -0.606145, -1.64005 )
 
 [node name="Road" parent="." instance=ExtResource( 14 )]
 editor/display_folded = true
@@ -106,6 +310,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 2.91038e-011, -2.91038e-011, 1, -60.030
 transform = Transform( 1, 0, 0, 0, 1, 0, 8.73115e-011, -8.73115e-011, 1, 60.5559, 5.72205e-005, -7.03149e-008 )
 
 [node name="track" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="Sprite3D" type="Sprite3D" parent="track"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 6.956, 0, -20.149 )
@@ -129,7 +334,7 @@ transform = Transform( 1, 0, 0, 0, 0.998996, 0.0448036, 0, -0.0448036, 0.998996,
 environment = ExtResource( 16 )
 
 [node name="car" parent="." instance=ExtResource( 17 )]
-transform = Transform( -0.329851, 0, 0.944033, 0, 1, 0, -0.944033, 0, -0.329851, 7.3237, 0.507613, 2.54825 )
+transform = Transform( -0.329851, 0, 0.944033, 0, 1, 0, -0.944033, 0, -0.329851, -8.08868, 0.507613, 11.3227 )
 
 [node name="ground" parent="." instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0807648, 0 )

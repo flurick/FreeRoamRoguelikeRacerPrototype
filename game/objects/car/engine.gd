@@ -8,7 +8,7 @@ var acceleration_input = 0
 var acceleration_multi = 2
 
 var steer = 0
-var turning_angle = 3
+var turning_angle = 4
 
 var engine_power = 3
 var forward = Vector3.FORWARD
